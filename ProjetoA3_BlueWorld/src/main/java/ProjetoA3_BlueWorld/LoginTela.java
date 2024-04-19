@@ -41,42 +41,45 @@ public class LoginTela extends javax.swing.JFrame {
         barra1 = new javax.swing.JLabel();
         ContateNos = new javax.swing.JLabel();
         EntrarButton = new javax.swing.JButton();
-        ImgFundo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Painel Login");
         getContentPane().setLayout(null);
 
-        ver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\BlueWorld\\ProjetoA3_BlueWorld\\src\\main\\Imagem\\visualizar.png")); // NOI18N
-        ver.setText("jLabel2");
+        ver.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL G5\\Downloads\\20241_usjt_psc_noite_intro_git-main\\20241_usjt_psc_noite_intro_git-main\\ProjetoA3_BlueWorld\\src\\main\\Imagem\\visualizar.png")); // NOI18N
         ver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 verMouseClicked(evt);
             }
         });
         getContentPane().add(ver);
-        ver.setBounds(1040, 500, 30, 40);
+        ver.setBounds(980, 510, 30, 40);
 
-        nver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\BlueWorld\\ProjetoA3_BlueWorld\\src\\main\\Imagem\\escondido.png")); // NOI18N
-        nver.setText("jLabel1");
+        nver.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL G5\\Downloads\\20241_usjt_psc_noite_intro_git-main\\20241_usjt_psc_noite_intro_git-main\\ProjetoA3_BlueWorld\\src\\main\\Imagem\\escondido.png")); // NOI18N
         nver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 nverMouseClicked(evt);
             }
         });
         getContentPane().add(nver);
-        nver.setBounds(1040, 500, 30, 40);
+        nver.setBounds(980, 510, 40, 40);
 
         loginTextField.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         loginTextField.setForeground(new java.awt.Color(255, 255, 255));
         loginTextField.setText("Usuário");
         getContentPane().add(loginTextField);
-        loginTextField.setBounds(690, 400, 310, 70);
+        loginTextField.setBounds(710, 410, 270, 60);
 
         pword.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         pword.setForeground(new java.awt.Color(255, 255, 255));
+        pword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pwordActionPerformed(evt);
+            }
+        });
         getContentPane().add(pword);
-        pword.setBounds(690, 490, 310, 60);
+        pword.setBounds(710, 500, 270, 60);
 
         PaginaIncial.setFont(new java.awt.Font("Calibri", 0, 25)); // NOI18N
         PaginaIncial.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,23 +124,22 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ContateNos);
-        ContateNos.setBounds(1327, 20, 123, 30);
+        ContateNos.setBounds(1327, 20, 122, 30);
 
         EntrarButton.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         EntrarButton.setForeground(new java.awt.Color(255, 255, 255));
-        EntrarButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\BlueWorld\\ProjetoA3_BlueWorld\\src\\main\\Imagem\\ENTRAR.png")); // NOI18N
+        EntrarButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL G5\\Downloads\\20241_usjt_psc_noite_intro_git-main\\20241_usjt_psc_noite_intro_git-main\\ProjetoA3_BlueWorld\\src\\main\\Imagem\\Logar.png")); // NOI18N
         EntrarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EntrarButtonActionPerformed(evt);
             }
         });
         getContentPane().add(EntrarButton);
-        EntrarButton.setBounds(900, 580, 130, 70);
+        EntrarButton.setBounds(630, 580, 400, 50);
 
-        ImgFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\BlueWorld\\ProjetoA3_BlueWorld\\src\\main\\Imagem\\ImgFundo.png")); // NOI18N
-        ImgFundo.setText("jLabel1");
-        getContentPane().add(ImgFundo);
-        ImgFundo.setBounds(0, 0, 1600, 900);
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL G5\\Downloads\\20241_usjt_psc_noite_intro_git-main\\20241_usjt_psc_noite_intro_git-main\\ProjetoA3_BlueWorld\\src\\main\\Imagem\\ImgFundo.png")); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 1600, 900);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -178,6 +180,10 @@ public class LoginTela extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ContateNosMouseClicked
 
+    private void pwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pwordActionPerformed
+
         
     
     public static void main(String args[]) {
@@ -216,11 +222,11 @@ public class LoginTela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ContateNos;
     private javax.swing.JButton EntrarButton;
-    private javax.swing.JLabel ImgFundo;
     private javax.swing.JLabel PaginaIncial;
     private javax.swing.JLabel SobreNós;
     private javax.swing.JLabel barra;
     private javax.swing.JLabel barra1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField loginTextField;
     private javax.swing.JLabel nver;
     private javax.swing.JPasswordField pword;

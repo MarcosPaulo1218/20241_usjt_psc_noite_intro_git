@@ -29,32 +29,30 @@
     <Component class="javax.swing.JLabel" name="ver">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Pichau\OneDrive\&#xc1;rea de Trabalho\BlueWorld\ProjetoA3_BlueWorld\src\main\Imagem\visualizar.png"/>
+          <Image iconType="2" name="C:\Users\DELL G5\Downloads\20241_usjt_psc_noite_intro_git-main\20241_usjt_psc_noite_intro_git-main\ProjetoA3_BlueWorld\src\main\Imagem\visualizar.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="verMouseClicked"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1040" y="500" width="30" height="40"/>
+          <AbsoluteConstraints x="980" y="510" width="30" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="nver">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Pichau\OneDrive\&#xc1;rea de Trabalho\BlueWorld\ProjetoA3_BlueWorld\src\main\Imagem\escondido.png"/>
+          <Image iconType="2" name="C:\Users\DELL G5\Downloads\20241_usjt_psc_noite_intro_git-main\20241_usjt_psc_noite_intro_git-main\ProjetoA3_BlueWorld\src\main\Imagem\escondido.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nverMouseClicked"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1040" y="500" width="30" height="40"/>
+          <AbsoluteConstraints x="980" y="510" width="40" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -70,7 +68,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="690" y="400" width="310" height="70"/>
+          <AbsoluteConstraints x="710" y="410" width="270" height="60"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -83,9 +81,12 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pwordActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="690" y="490" width="310" height="60"/>
+          <AbsoluteConstraints x="710" y="500" width="270" height="60"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -187,7 +188,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Pichau\OneDrive\&#xc1;rea de Trabalho\BlueWorld\ProjetoA3_BlueWorld\src\main\Imagem\ENTRAR.png"/>
+          <Image iconType="2" name="C:\Users\DELL G5\Downloads\20241_usjt_psc_noite_intro_git-main\20241_usjt_psc_noite_intro_git-main\ProjetoA3_BlueWorld\src\main\Imagem\Logar.png"/>
         </Property>
       </Properties>
       <Events>
@@ -195,16 +196,15 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="900" y="580" width="130" height="70"/>
+          <AbsoluteConstraints x="630" y="580" width="400" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="ImgFundo">
+    <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Pichau\OneDrive\&#xc1;rea de Trabalho\BlueWorld\ProjetoA3_BlueWorld\src\main\Imagem\ImgFundo.png"/>
+          <Image iconType="2" name="C:\Users\DELL G5\Downloads\20241_usjt_psc_noite_intro_git-main\20241_usjt_psc_noite_intro_git-main\ProjetoA3_BlueWorld\src\main\Imagem\ImgFundo.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
