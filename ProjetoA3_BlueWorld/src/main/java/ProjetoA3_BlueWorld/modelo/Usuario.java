@@ -6,7 +6,7 @@ package ProjetoA3_BlueWorld.modelo;
 
 /**
  *
- * @author DELL G5
+ * @author saulo
  */
 public class Usuario {
     private int codigo;
