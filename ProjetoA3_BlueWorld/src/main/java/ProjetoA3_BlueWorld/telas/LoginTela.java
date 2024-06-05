@@ -42,27 +42,29 @@ public class LoginTela extends javax.swing.JFrame {
         setTitle("Painel Login");
         getContentPane().setLayout(null);
 
+        ver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\visualizar.png")); // NOI18N
         ver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 verMouseClicked(evt);
             }
         });
         getContentPane().add(ver);
-        ver.setBounds(850, 390, 0, 50);
+        ver.setBounds(840, 390, 32, 50);
 
+        nver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\escondido.png")); // NOI18N
         nver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 nverMouseClicked(evt);
             }
         });
         getContentPane().add(nver);
-        nver.setBounds(850, 380, 40, 70);
+        nver.setBounds(840, 380, 40, 70);
 
         loginTextField.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         loginTextField.setForeground(new java.awt.Color(255, 255, 255));
         loginTextField.setText("Usuário");
         getContentPane().add(loginTextField);
-        loginTextField.setBounds(570, 300, 270, 70);
+        loginTextField.setBounds(580, 300, 260, 70);
 
         pword.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         pword.setForeground(new java.awt.Color(255, 255, 255));
@@ -72,7 +74,7 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(pword);
-        pword.setBounds(570, 380, 270, 70);
+        pword.setBounds(580, 380, 260, 70);
 
         EntrarButton.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         EntrarButton.setForeground(new java.awt.Color(255, 255, 255));

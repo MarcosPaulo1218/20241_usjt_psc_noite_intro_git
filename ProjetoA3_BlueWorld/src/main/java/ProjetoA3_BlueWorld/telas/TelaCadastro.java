@@ -6,6 +6,7 @@ package ProjetoA3_BlueWorld.telas;
  */
 
 import javax.swing.*;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import ProjetoA3_BlueWorld.bd.UsuarioDAO;
@@ -18,6 +19,51 @@ public class TelaCadastro extends javax.swing.JFrame {
     public TelaCadastro() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+        // Definir campo Nome Completo
+        NomeComplet.setBackground(new Color(0, 0, 0, 0));
+        NomeComplet.setBorder(null);
+        NomeComplet.setOpaque(false);
+        
+        // Definir campo Email
+        Email.setBackground(new Color(0, 0, 0, 0));
+        Email.setBorder(null);
+        Email.setOpaque(false);
+        
+        // Definir campo Confirmar Email
+        ConfEmail.setBackground(new Color(0, 0, 0, 0));
+        ConfEmail.setBorder(null);
+        ConfEmail.setOpaque(false);
+        
+        // Definir campo Senha
+        Pass.setBackground(new Color(0, 0, 0, 0));
+        Pass.setBorder(null);
+        Pass.setOpaque(false);
+        
+        // Definir campo Confirmar Senha
+        ConfPass.setBackground(new Color(0, 0, 0, 0));
+        ConfPass.setBorder(null);
+        ConfPass.setOpaque(false);
+        
+        // Definir campo CPF
+        CPF.setBackground(new Color(0, 0, 0, 0));
+        CPF.setBorder(null);
+        CPF.setOpaque(false);
+        
+        // Definir campo CEP
+        CEP.setBackground(new Color(0, 0, 0, 0));
+        CEP.setBorder(null);
+        CEP.setOpaque(false);
+        
+        // Definir campo Rua
+        Rua.setBackground(new Color(0, 0, 0, 0));
+        Rua.setBorder(null);
+        Rua.setOpaque(false);
+        
+        // Definir campo Rua
+        Rua.setBackground(new Color(0, 0, 0, 0));
+        Rua.setBorder(null);
+        Rua.setOpaque(false);
 
         usuarioDAO = new UsuarioDAO();
     }
@@ -51,36 +97,41 @@ public class TelaCadastro extends javax.swing.JFrame {
         NomeComplet.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         NomeComplet.setForeground(new java.awt.Color(255, 255, 255));
         NomeComplet.setText("Nome Completo");
+        NomeComplet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NomeCompletActionPerformed(evt);
+            }
+        });
         getContentPane().add(NomeComplet);
-        NomeComplet.setBounds(90, 201, 330, 40);
+        NomeComplet.setBounds(100, 190, 340, 60);
 
         Email.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         Email.setForeground(new java.awt.Color(255, 255, 255));
         Email.setText("E-mail");
         getContentPane().add(Email);
-        Email.setBounds(90, 290, 330, 50);
+        Email.setBounds(100, 290, 330, 50);
 
         ConfEmail.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         ConfEmail.setForeground(new java.awt.Color(255, 255, 255));
         ConfEmail.setText("E-mail");
         getContentPane().add(ConfEmail);
-        ConfEmail.setBounds(90, 390, 330, 40);
+        ConfEmail.setBounds(100, 380, 330, 50);
 
         Pass.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         Pass.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(Pass);
-        Pass.setBounds(90, 488, 330, 30);
+        Pass.setBounds(100, 478, 330, 50);
 
         ConfPass.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         ConfPass.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(ConfPass);
-        ConfPass.setBounds(90, 580, 330, 30);
+        ConfPass.setBounds(100, 570, 330, 50);
 
         CPF.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         CPF.setForeground(new java.awt.Color(255, 255, 255));
         CPF.setText("CPF");
         getContentPane().add(CPF);
-        CPF.setBounds(620, 201, 330, 40);
+        CPF.setBounds(630, 190, 330, 60);
 
         CEP.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         CEP.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,7 +142,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CEP);
-        CEP.setBounds(620, 300, 330, 25);
+        CEP.setBounds(630, 290, 330, 50);
 
         Rua.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         Rua.setForeground(new java.awt.Color(255, 255, 255));
@@ -102,7 +153,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Rua);
-        Rua.setBounds(620, 390, 330, 40);
+        Rua.setBounds(630, 380, 330, 50);
 
         Confirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Confirmar.png"))); // NOI18N
         Confirmar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,7 +162,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Confirmar);
-        Confirmar.setBounds(790, 580, 170, 50);
+        Confirmar.setBounds(640, 610, 160, 50);
 
         Limpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Limpar.png"))); // NOI18N
         Limpar.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +171,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Limpar);
-        Limpar.setBounds(600, 580, 180, 50);
+        Limpar.setBounds(820, 610, 160, 50);
 
         ImgFundoSingup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TelaCadastro.png"))); // NOI18N
         ImgFundoSingup.setText("jLabel2");
@@ -168,6 +219,10 @@ public class TelaCadastro extends javax.swing.JFrame {
         CEP.setText("");
         Rua.setText("");
     }//GEN-LAST:event_LimparActionPerformed
+
+    private void NomeCompletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeCompletActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NomeCompletActionPerformed
 public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
