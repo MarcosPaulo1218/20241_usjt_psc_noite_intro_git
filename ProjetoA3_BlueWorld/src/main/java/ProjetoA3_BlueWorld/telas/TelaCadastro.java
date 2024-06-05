@@ -1,55 +1,27 @@
 package ProjetoA3_BlueWorld.telas;
 
-
-import java.awt.Color;
-import javax.swing.JFrame;
-
 /**
  *
  * @author //Grupo 04\\
  */
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import ProjetoA3_BlueWorld.bd.UsuarioDAO;
+import ProjetoA3_BlueWorld.modelo.Usuario;
+
 public class TelaCadastro extends javax.swing.JFrame {
 
-    
+    private UsuarioDAO usuarioDAO;
+
     public TelaCadastro() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        
-        
-        
-        NomeComplet.setBackground(new Color(0, 0, 0, 0));
-        NomeComplet.setBorder(null);
-        NomeComplet.setOpaque(false);
-        
-        // Definir campo de Senha
-        Email.setBackground(new Color(0, 0, 0, 0));
-        Email.setBorder(null);
-        Email.setOpaque(false);
-        
-        ConfEmail.setBackground(new Color(0, 0, 0, 0));
-        ConfEmail.setBorder(null);
-        ConfEmail.setOpaque(false);
-        
-        Pass.setBackground(new Color(0, 0, 0, 0));
-        Pass.setBorder(null);
-        Pass.setOpaque(false);
-        
-        ConfPass.setBackground(new Color(0, 0, 0, 0));
-        ConfPass.setBorder(null);
-        ConfPass.setOpaque(false);
-        
-        CPF.setBackground(new Color(0, 0, 0, 0));
-        CPF.setBorder(null);
-        CPF.setOpaque(false);
-        
-        CEP.setBackground(new Color(0, 0, 0, 0));
-        CEP.setBorder(null);
-        CEP.setOpaque(false);
-        
-        Rua.setBackground(new Color(0, 0, 0, 0));
-        Rua.setBorder(null);
-        Rua.setOpaque(false);
+
+        usuarioDAO = new UsuarioDAO();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -159,7 +131,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RuaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_RuaActionPerformed
 
     private void CEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CEPActionPerformed
@@ -167,17 +139,36 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_CEPActionPerformed
 
     private void ConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConfirmarMouseClicked
-        
+        String nomeCompleto = NomeComplet.getText();
+        String email = Email.getText();
+        String senha = new String(Pass.getPassword());
+        String cpf = CPF.getText();
+        String cep = CEP.getText();
+        String rua = Rua.getText();
+        int tipo = 1; // Supondo que o tipo seja um valor fixo ou obtido de outra forma
+
+        Usuario u = new Usuario(nomeCompleto, email, senha, cpf, cep, rua, tipo);
+
+        try {
+            usuarioDAO.cadastrar(u);
+            JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Erro ao cadastrar usuário: " + e.getMessage());
+        }
+    
     }//GEN-LAST:event_ConfirmarMouseClicked
 
     private void LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimparActionPerformed
-       
+        NomeComplet.setText("");
+        Email.setText("");
+        ConfEmail.setText("");
+        Pass.setText("");
+        ConfPass.setText("");
+        CPF.setText("");
+        CEP.setText("");
+        Rua.setText("");
     }//GEN-LAST:event_LimparActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -191,25 +182,24 @@ public class TelaCadastro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new TelaCadastro().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CEP;
     private javax.swing.JTextField CPF;
@@ -223,4 +213,5 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JPasswordField Pass;
     private javax.swing.JTextField Rua;
     // End of variables declaration//GEN-END:variables
+
 }

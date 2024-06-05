@@ -13,13 +13,13 @@ import ProjetoA3_BlueWorld.eventos.EventoMonitoramento;
 
 public class TesteEvento {
     public static void main(String[] args) {
-        // Importe EventoMonitoramento se estiver em um pacote diferente
+
         EventoMonitoramento evento = new EventoMonitoramento();
         evento.setNome("Monitoramento da Qualidade da Água");
         evento.setDescricao("Evento de monitoramento da qualidade da água no rio X");
         evento.setDataInicio(new Date());
         evento.setLocalizacao("Rio X");
-        evento.setQualidadeAgua(7.5); // Supondo que 7.5 seja uma medição de qualidade da água
+        evento.setQualidadeAgua(7.5);
         System.out.println(evento);
     }
 }
