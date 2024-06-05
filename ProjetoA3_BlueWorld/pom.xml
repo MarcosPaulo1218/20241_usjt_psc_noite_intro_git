@@ -13,8 +13,16 @@
     </properties>
     <name>ProjetoA3_BlueWorld</name>
 
-    <!-- Dependência para a biblioteca dotenv-java -->
+    <!-- Dependências -->
     <dependencies>
+        <!-- Dependência para o driver JDBC do PostgreSQL -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.24</version> 
+        </dependency>
+
+        <!-- Dependência para a biblioteca dotenv-java -->
         <dependency>
             <groupId>io.github.cdimascio</groupId>
             <artifactId>dotenv-java</artifactId>

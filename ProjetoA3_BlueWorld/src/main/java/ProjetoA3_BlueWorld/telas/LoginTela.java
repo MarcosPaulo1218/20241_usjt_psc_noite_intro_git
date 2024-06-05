@@ -2,7 +2,13 @@ package ProjetoA3_BlueWorld.telas;
 
 import java.awt.Color;
 import javax.swing.JFrame;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import ProjetoA3_BlueWorld.bd.ConnectionFactory;
 
 /**
  *
@@ -18,9 +24,9 @@ public class LoginTela extends javax.swing.JFrame {
         
 
         // Definir campo de Usuário
-        loginTextField.setBackground(new Color(0, 0, 0, 0));
-        loginTextField.setBorder(null);
-        loginTextField.setOpaque(false);
+        emailTextField.setBackground(new Color(0, 0, 0, 0));
+        emailTextField.setBorder(null);
+        emailTextField.setOpaque(false);
         
         // Definir campo de Senha
         pword.setBackground(new Color(0, 0, 0, 0));
@@ -33,7 +39,7 @@ public class LoginTela extends javax.swing.JFrame {
 
         ver = new javax.swing.JLabel();
         nver = new javax.swing.JLabel();
-        loginTextField = new javax.swing.JTextField();
+        emailTextField = new javax.swing.JTextField();
         pword = new javax.swing.JPasswordField();
         EntrarButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -42,16 +48,14 @@ public class LoginTela extends javax.swing.JFrame {
         setTitle("Painel Login");
         getContentPane().setLayout(null);
 
-        ver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\visualizar.png")); // NOI18N
         ver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 verMouseClicked(evt);
             }
         });
         getContentPane().add(ver);
-        ver.setBounds(840, 390, 32, 50);
+        ver.setBounds(840, 390, 0, 50);
 
-        nver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\escondido.png")); // NOI18N
         nver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 nverMouseClicked(evt);
@@ -60,11 +64,10 @@ public class LoginTela extends javax.swing.JFrame {
         getContentPane().add(nver);
         nver.setBounds(840, 380, 40, 70);
 
-        loginTextField.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        loginTextField.setForeground(new java.awt.Color(255, 255, 255));
-        loginTextField.setText("Usuário");
-        getContentPane().add(loginTextField);
-        loginTextField.setBounds(580, 300, 260, 70);
+        emailTextField.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        emailTextField.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(emailTextField);
+        emailTextField.setBounds(580, 300, 260, 70);
 
         pword.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         pword.setForeground(new java.awt.Color(255, 255, 255));
@@ -108,18 +111,55 @@ public class LoginTela extends javax.swing.JFrame {
     }//GEN-LAST:event_nverMouseClicked
 
     private void EntrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarButtonActionPerformed
-        String login = loginTextField.getText();
-        String senha = new String(pword.getPassword());
-        if(login.equals("admin") && senha.equals("admin")){
-            JOptionPane.showMessageDialog(null, "Bem-Vindo, Administrador!");
+        String email = emailTextField.getText();
+    String senha = new String(pword.getPassword());
+    
+    // Conecta-se ao banco de dados
+    Connection conn = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    
+    try {
+        ConnectionFactory factory = new ConnectionFactory();
+        conn = factory.conectar(); // Obtém a conexão do ConnectionFactory
+
+        // Consulta para verificar se o e-mail e a senha correspondem a um registro no banco de dados
+        String sql = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
+        stmt = conn.prepareStatement(sql);
+        stmt.setString(1, email);
+        stmt.setString(2, senha);
+        rs = stmt.executeQuery();
+
+        // Se houver um registro correspondente, o login é bem-sucedido
+        if (rs.next()) {
+            // Faça o que for necessário após o login bem-sucedido, como abrir uma nova janela
+            JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
+            // Exemplo: abrir uma nova janela
+            TelaPrincipal janelaPrincipal = new TelaPrincipal();
+            janelaPrincipal.setVisible(true);
+            dispose(); // Fecha a janela de login
+        } else {
+            // Se não houver registro correspondente, exiba uma mensagem de erro
+            JOptionPane.showMessageDialog(this, "E-mail ou senha incorretos. Tente novamente.");
         }
-        else{
-            JOptionPane.showMessageDialog(null, "Usuário/senha inválido");
+    } catch (Exception e) {
+        // Trate quaisquer erros aqui
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Erro ao conectar ao banco de dados.");
+    } finally {
+        // Feche os recursos
+        try {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+    }
     }//GEN-LAST:event_EntrarButtonActionPerformed
 
     private void pwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwordActionPerformed
-        // TODO add your handling code here:
+        var senha = pword.getPassword();
     }//GEN-LAST:event_pwordActionPerformed
 
         
@@ -159,8 +199,8 @@ public class LoginTela extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EntrarButton;
+    private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField loginTextField;
     private javax.swing.JLabel nver;
     private javax.swing.JPasswordField pword;
     private javax.swing.JLabel ver;

@@ -10,10 +10,11 @@ package ProjetoA3_BlueWorld.bd;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import io.github.cdimascio.dotenv.Dotenv;
+import java.sql.SQLException;
 
 public class ConnectionFactory {
     // Método para criar a conexão
-    public Connection conectar() throws Exception {
+    public Connection conectar() throws SQLException {
         // Carregando as variáveis de ambiente do arquivo .env
         Dotenv dotenv = Dotenv.load();
 
@@ -30,6 +31,14 @@ public class ConnectionFactory {
             host, port, database
         );
 
+        // Registrando o driver JDBC do PostgreSQL
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new SQLException("Driver JDBC do PostgreSQL não encontrado.", e);
+        }
+
+        // Retornando a conexão
         return DriverManager.getConnection(stringConexao, user, password);
     }
 }

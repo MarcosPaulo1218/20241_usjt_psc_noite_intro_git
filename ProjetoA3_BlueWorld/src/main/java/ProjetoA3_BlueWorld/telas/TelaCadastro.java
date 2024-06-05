@@ -88,7 +88,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         Rua = new javax.swing.JTextField();
         Confirmar = new javax.swing.JToggleButton();
         Limpar = new javax.swing.JToggleButton();
-        ImgFundoSingup = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SingUp");
@@ -103,35 +103,40 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(NomeComplet);
-        NomeComplet.setBounds(100, 190, 340, 60);
+        NomeComplet.setBounds(200, 180, 340, 60);
 
         Email.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         Email.setForeground(new java.awt.Color(255, 255, 255));
         Email.setText("E-mail");
         getContentPane().add(Email);
-        Email.setBounds(100, 290, 330, 50);
+        Email.setBounds(200, 280, 330, 50);
 
         ConfEmail.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         ConfEmail.setForeground(new java.awt.Color(255, 255, 255));
         ConfEmail.setText("E-mail");
         getContentPane().add(ConfEmail);
-        ConfEmail.setBounds(100, 380, 330, 50);
+        ConfEmail.setBounds(200, 370, 330, 50);
 
         Pass.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         Pass.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(Pass);
-        Pass.setBounds(100, 478, 330, 50);
+        Pass.setBounds(200, 470, 330, 50);
 
         ConfPass.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         ConfPass.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(ConfPass);
-        ConfPass.setBounds(100, 570, 330, 50);
+        ConfPass.setBounds(200, 570, 330, 50);
 
         CPF.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         CPF.setForeground(new java.awt.Color(255, 255, 255));
         CPF.setText("CPF");
+        CPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CPFActionPerformed(evt);
+            }
+        });
         getContentPane().add(CPF);
-        CPF.setBounds(630, 190, 330, 60);
+        CPF.setBounds(810, 180, 330, 50);
 
         CEP.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         CEP.setForeground(new java.awt.Color(255, 255, 255));
@@ -142,7 +147,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CEP);
-        CEP.setBounds(630, 290, 330, 50);
+        CEP.setBounds(820, 280, 330, 50);
 
         Rua.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         Rua.setForeground(new java.awt.Color(255, 255, 255));
@@ -153,7 +158,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Rua);
-        Rua.setBounds(630, 380, 330, 50);
+        Rua.setBounds(820, 370, 330, 50);
 
         Confirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Confirmar.png"))); // NOI18N
         Confirmar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -173,10 +178,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         getContentPane().add(Limpar);
         Limpar.setBounds(820, 610, 160, 50);
 
-        ImgFundoSingup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TelaCadastro.png"))); // NOI18N
-        ImgFundoSingup.setText("jLabel2");
-        getContentPane().add(ImgFundoSingup);
-        ImgFundoSingup.setBounds(0, 0, 1360, 770);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TelaCadastro.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1420, 790);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -196,7 +200,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         String cpf = CPF.getText();
         String cep = CEP.getText();
         String rua = Rua.getText();
-        int tipo = 1; // Supondo que o tipo seja um valor fixo ou obtido de outra forma
+        String tipo = "comum"; // Supondo que o tipo seja um valor fixo ou obtido de outra forma
 
         Usuario u = new Usuario(nomeCompleto, email, senha, cpf, cep, rua, tipo);
 
@@ -223,6 +227,10 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void NomeCompletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeCompletActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NomeCompletActionPerformed
+
+    private void CPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CPFActionPerformed
 public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -262,11 +270,11 @@ public static void main(String args[]) {
     private javax.swing.JPasswordField ConfPass;
     private javax.swing.JToggleButton Confirmar;
     private javax.swing.JTextField Email;
-    private javax.swing.JLabel ImgFundoSingup;
     private javax.swing.JToggleButton Limpar;
     private javax.swing.JTextField NomeComplet;
     private javax.swing.JPasswordField Pass;
     private javax.swing.JTextField Rua;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
 }

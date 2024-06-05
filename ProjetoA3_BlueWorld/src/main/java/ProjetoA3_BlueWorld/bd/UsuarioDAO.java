@@ -45,7 +45,7 @@ public class UsuarioDAO {
             ps.setString(4, u.getCpf());
             ps.setString(5, u.getCep());
             ps.setString(6, u.getRua());
-            ps.setInt(7, u.getTipo());
+            ps.setString(7, u.getTipo());
             ps.executeUpdate();
         }
     }

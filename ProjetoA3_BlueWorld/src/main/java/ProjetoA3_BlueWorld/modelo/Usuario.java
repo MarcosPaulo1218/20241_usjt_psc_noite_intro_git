@@ -14,10 +14,10 @@ public class Usuario {
     private String cpf;
     private String cep;
     private String rua;
-    private int tipo;
+    private String tipo;
 
     // Construtor
-    public Usuario(String nomeCompleto, String email, String senha, String cpf, String cep, String rua, int tipo) {
+    public Usuario(String nomeCompleto, String email, String senha, String cpf, String cep, String rua, String tipo) {
         this.nomeCompleto = nomeCompleto;
         this.email = email;
         this.senha = senha;
@@ -76,11 +76,11 @@ public class Usuario {
         this.rua = rua;
     }
 
-    public int getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(int tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 }
