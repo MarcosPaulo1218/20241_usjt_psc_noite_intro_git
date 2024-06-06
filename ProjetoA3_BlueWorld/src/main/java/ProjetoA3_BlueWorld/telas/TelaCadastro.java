@@ -184,6 +184,11 @@ public class TelaCadastro extends javax.swing.JFrame {
         jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Voltar.png"))); // NOI18N
         jToggleButton1.setAutoscrolls(true);
         jToggleButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jToggleButton1);
         jToggleButton1.setBounds(1000, 600, 180, 60);
 
@@ -269,6 +274,12 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void Limpar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Limpar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Limpar1ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+     LoginTela janelaPrincipal = new LoginTela();
+     janelaPrincipal.setVisible(true);
+     dispose();
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
