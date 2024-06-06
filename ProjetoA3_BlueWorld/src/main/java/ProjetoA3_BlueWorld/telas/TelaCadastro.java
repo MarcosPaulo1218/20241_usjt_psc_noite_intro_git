@@ -88,7 +88,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         Rua = new javax.swing.JTextField();
         Confirmar = new javax.swing.JToggleButton();
         Limpar = new javax.swing.JToggleButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
+        Limpar1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SingUp");
@@ -178,9 +180,26 @@ public class TelaCadastro extends javax.swing.JFrame {
         getContentPane().add(Limpar);
         Limpar.setBounds(820, 610, 160, 50);
 
+        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Voltar.png"))); // NOI18N
+        jToggleButton1.setText("Voltar");
+        jToggleButton1.setAutoscrolls(true);
+        jToggleButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        getContentPane().add(jToggleButton1);
+        jToggleButton1.setBounds(1000, 600, 180, 60);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TelaCadastro.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 1420, 790);
+
+        Limpar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Limpar.png"))); // NOI18N
+        Limpar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Limpar1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Limpar1);
+        Limpar1.setBounds(820, 610, 160, 50);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -247,6 +266,10 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void CPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CPFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CPFActionPerformed
+
+    private void Limpar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Limpar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Limpar1ActionPerformed
 public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -287,10 +310,12 @@ public static void main(String args[]) {
     private javax.swing.JToggleButton Confirmar;
     private javax.swing.JTextField Email;
     private javax.swing.JToggleButton Limpar;
+    private javax.swing.JToggleButton Limpar1;
     private javax.swing.JTextField NomeComplet;
     private javax.swing.JPasswordField Pass;
     private javax.swing.JTextField Rua;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 
 }
