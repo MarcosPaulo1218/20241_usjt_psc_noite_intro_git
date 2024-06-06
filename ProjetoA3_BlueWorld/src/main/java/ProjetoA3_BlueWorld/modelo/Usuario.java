@@ -14,17 +14,17 @@ public class Usuario {
     private String cpf;
     private String cep;
     private String rua;
-    private String tipo;
+    private String tipo_usuario;
 
     // Construtor
-    public Usuario(String nomeCompleto, String email, String senha, String cpf, String cep, String rua, String tipo) {
+    public Usuario(String nomeCompleto, String email, String senha, String cpf, String cep, String rua, String tipo_usuario) {
         this.nomeCompleto = nomeCompleto;
         this.email = email;
         this.senha = senha;
         this.cpf = cpf;
         this.cep = cep;
         this.rua = rua;
-        this.tipo = tipo;
+        this.tipo_usuario = tipo_usuario;
     }
 
     // Getters e Setters
@@ -76,12 +76,12 @@ public class Usuario {
         this.rua = rua;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getTipo_usuario() {
+        return tipo_usuario;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setTipo_usuario(String tipo_usuario) {
+        this.tipo_usuario = tipo_usuario;
     }
 }
     

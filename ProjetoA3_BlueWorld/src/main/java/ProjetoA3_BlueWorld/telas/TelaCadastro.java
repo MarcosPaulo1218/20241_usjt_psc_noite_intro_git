@@ -196,17 +196,33 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void ConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConfirmarMouseClicked
         String nomeCompleto = NomeComplet.getText();
         String email = Email.getText();
+        String confirmar_email = ConfEmail.getText();
         String senha = new String(Pass.getPassword());
+        String confirmar_senha = new String (ConfPass.getPassword());
         String cpf = CPF.getText();
         String cep = CEP.getText();
         String rua = Rua.getText();
-        String tipo = "comum"; // Supondo que o tipo seja um valor fixo ou obtido de outra forma
+        String tipo_usuario = "comum";
+        
+        // Verificação de email e senha
+                if (!email.equals(confirmar_email)) {
+                    JOptionPane.showMessageDialog(TelaCadastro.this, "Os emails não coincidem.");
+                    return;
+                }
 
-        Usuario u = new Usuario(nomeCompleto, email, senha, cpf, cep, rua, tipo);
+                if (!senha.equals(confirmar_senha)) {
+                    JOptionPane.showMessageDialog(TelaCadastro.this, "As senhas não coincidem.");
+                    return;
+                }
+
+        Usuario u = new Usuario(nomeCompleto, email, senha, cpf, cep, rua, tipo_usuario);
 
         try {
             usuarioDAO.cadastrar(u);
             JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!");
+            LoginTela telaLogin = new LoginTela();
+            telaLogin.setVisible(true);
+            dispose();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Erro ao cadastrar usuário: " + e.getMessage());
         }

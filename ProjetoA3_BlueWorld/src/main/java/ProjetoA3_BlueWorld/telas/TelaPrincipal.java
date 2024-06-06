@@ -6,7 +6,7 @@ package ProjetoA3_BlueWorld.telas;
 
 /**
  *
- * @author DELL G5
+ * @author saulo
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 

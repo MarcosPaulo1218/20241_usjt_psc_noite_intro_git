@@ -35,7 +35,7 @@ public class UsuarioDAO {
     }
 
     public void cadastrar(Usuario u) throws Exception {
-        var sql = "INSERT INTO usuarios (nome_completo, email, senha, cpf, cep, rua, tipo) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        var sql = "INSERT INTO usuarios (nome_completo, email, senha, cpf, cep, rua, tipo_usuario) VALUES (?, ?, ?, ?, ?, ?, ?)";
         var conexao = new ConnectionFactory().conectar();
 
         try (var ps = conexao.prepareStatement(sql)) {
@@ -45,7 +45,7 @@ public class UsuarioDAO {
             ps.setString(4, u.getCpf());
             ps.setString(5, u.getCep());
             ps.setString(6, u.getRua());
-            ps.setString(7, u.getTipo());
+            ps.setString(7, u.getTipo_usuario());
             ps.executeUpdate();
         }
     }
