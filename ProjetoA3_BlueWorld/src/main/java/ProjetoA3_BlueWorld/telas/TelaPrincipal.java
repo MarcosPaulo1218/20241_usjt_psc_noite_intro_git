@@ -10,6 +10,14 @@ package ProjetoA3_BlueWorld.telas;
  */
 
 import java.awt.Color;
+import javax.swing.JFrame;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import ProjetoA3_BlueWorld.bd.ConnectionFactory;
 
 public class TelaPrincipal extends javax.swing.JFrame {
 
@@ -84,16 +92,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
         DataOcorrencia.setBounds(120, 560, 390, 60);
 
         Confirmar.setText("Confirmar");
+        Confirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmarActionPerformed(evt);
+            }
+        });
         getContentPane().add(Confirmar);
-        Confirmar.setBounds(470, 680, 83, 28);
+        Confirmar.setBounds(470, 680, 83, 23);
 
         Voltar.setText("Voltar");
+        Voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VoltarActionPerformed(evt);
+            }
+        });
         getContentPane().add(Voltar);
-        Voltar.setBounds(390, 680, 59, 28);
+        Voltar.setBounds(390, 680, 62, 23);
 
         Limpar.setText("Limpar");
+        Limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LimparActionPerformed(evt);
+            }
+        });
         getContentPane().add(Limpar);
-        Limpar.setBounds(310, 680, 67, 28);
+        Limpar.setBounds(310, 680, 67, 23);
 
         Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TelaCadastroRio.png"))); // NOI18N
         getContentPane().add(Fundo);
@@ -101,6 +124,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ConfirmarActionPerformed
+
+    private void VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarActionPerformed
+            LoginTela janelaPrincipal = new LoginTela();
+            janelaPrincipal.setVisible(true);
+            dispose();
+    }//GEN-LAST:event_VoltarActionPerformed
+
+    private void LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimparActionPerformed
+        NomeRio.setText("");
+        NivelPoluicao.setText("");
+        TipoPoluicao.setText("");
+        DataOcorrencia.setText("");
+    }//GEN-LAST:event_LimparActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,11 +4,13 @@ ProjetoA3_BlueWorld\telas\TelaCadastro$3.class
 ProjetoA3_BlueWorld\telas\TelaCadastro$5.class
 ProjetoA3_BlueWorld\telas\LoginTela.class
 ProjetoA3_BlueWorld\telas\LoginTela$1.class
+ProjetoA3_BlueWorld\telas\TelaPrincipal$2.class
 ProjetoA3_BlueWorld\telas\TelaCadastro$1.class
 ProjetoA3_BlueWorld\eventos\Evento.class
 ProjetoA3_BlueWorld\telas\TelaCadastro$8.class
 ProjetoA3_BlueWorld\telas\TelaPrincipal.class
 ProjetoA3_BlueWorld\telas\TelaCadastro$6.class
+ProjetoA3_BlueWorld\telas\TelaPrincipal$4.class
 ProjetoA3_BlueWorld\telas\LoginTela$3.class
 ProjetoA3_BlueWorld\telas\TelaCadastro$4.class
 ProjetoA3_BlueWorld\telas\LoginTela$2.class
@@ -18,6 +20,7 @@ ProjetoA3_BlueWorld\bd\UsuarioDAO.class
 ProjetoA3_BlueWorld\telas\LoginTela$5.class
 ProjetoA3_BlueWorld\telas\TelaCadastro$7.class
 ProjetoA3_BlueWorld\telas\LoginTela$4.class
+ProjetoA3_BlueWorld\telas\TelaPrincipal$3.class
 ProjetoA3_BlueWorld\bd\EventoDAO.class
 ProjetoA3_BlueWorld\modelo\Usuario.class
 ProjetoA3_BlueWorld\bd\ConnectionFactory.class
