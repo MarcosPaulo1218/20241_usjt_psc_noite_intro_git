@@ -47,6 +47,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
         DataOcorrencia.setBackground(new Color(0, 0, 0, 0));
         DataOcorrencia.setBorder(null);
         DataOcorrencia.setOpaque(false);
+        
+        // Definir campo Bairro
+        Bairro.setBackground(new Color(0, 0, 0, 0));
+        Bairro.setBorder(null);
+        Bairro.setOpaque(false);
+        
+        
+        // Definir campo Estado
+        Estado.setBackground(new Color(0, 0, 0, 0));
+        Estado.setBorder(null);
+        Estado.setOpaque(false);
+        
+        
+        // Definir campo Confirmar
+        Confirmar.setBackground(new Color(0, 0, 0, 0));
+        Confirmar.setBorder(null);
+        Confirmar.setOpaque(false);
+        
+        // Definir campo Limpar
+        Limpar.setBackground(new Color(0, 0, 0, 0));
+        Limpar.setBorder(null);
+        Limpar.setOpaque(false);
+        
+        // Definir campo Data de ocorrência
+        Voltar.setBackground(new Color(0, 0, 0, 0));
+        Voltar.setBorder(null);
+        Voltar.setOpaque(false);
     }
 
     /**
@@ -62,6 +89,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         NivelPoluicao = new javax.swing.JTextField();
         TipoPoluicao = new javax.swing.JTextField();
         DataOcorrencia = new javax.swing.JTextField();
+        Bairro = new javax.swing.JTextField();
+        Estado = new javax.swing.JTextField();
         Confirmar = new javax.swing.JToggleButton();
         Voltar = new javax.swing.JToggleButton();
         Limpar = new javax.swing.JToggleButton();
@@ -91,36 +120,47 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(DataOcorrencia);
         DataOcorrencia.setBounds(120, 560, 390, 60);
 
-        Confirmar.setText("Confirmar");
+        Bairro.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        Bairro.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(Bairro);
+        Bairro.setBounds(610, 220, 370, 60);
+
+        Estado.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        Estado.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(Estado);
+        Estado.setBounds(610, 330, 380, 70);
+
+        Confirmar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\Confirmar2.png")); // NOI18N
         Confirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfirmarActionPerformed(evt);
             }
         });
         getContentPane().add(Confirmar);
-        Confirmar.setBounds(470, 680, 83, 23);
+        Confirmar.setBounds(510, 680, 180, 60);
 
-        Voltar.setText("Voltar");
+        Voltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\Voltar2.png")); // NOI18N
         Voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VoltarActionPerformed(evt);
             }
         });
         getContentPane().add(Voltar);
-        Voltar.setBounds(390, 680, 62, 23);
+        Voltar.setBounds(90, 680, 180, 60);
 
-        Limpar.setText("Limpar");
+        Limpar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\Limpar2.png")); // NOI18N
         Limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LimparActionPerformed(evt);
             }
         });
         getContentPane().add(Limpar);
-        Limpar.setBounds(310, 680, 67, 23);
+        Limpar.setBounds(290, 680, 190, 60);
 
-        Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TelaCadastroRio.png"))); // NOI18N
+        Fundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\TelaCadastroRio.png")); // NOI18N
+        Fundo.setText("jLabel1");
         getContentPane().add(Fundo);
-        Fundo.setBounds(0, 0, 1360, 768);
+        Fundo.setBounds(0, 0, 1360, 770);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -178,8 +218,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Bairro;
     private javax.swing.JToggleButton Confirmar;
     private javax.swing.JTextField DataOcorrencia;
+    private javax.swing.JTextField Estado;
     private javax.swing.JLabel Fundo;
     private javax.swing.JToggleButton Limpar;
     private javax.swing.JTextField NivelPoluicao;

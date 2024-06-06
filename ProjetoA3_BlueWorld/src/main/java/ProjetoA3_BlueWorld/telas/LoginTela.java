@@ -37,8 +37,8 @@ public class LoginTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ver = new javax.swing.JLabel();
         nver = new javax.swing.JLabel();
+        ver = new javax.swing.JLabel();
         emailTextField = new javax.swing.JTextField();
         pword = new javax.swing.JPasswordField();
         EntrarButton = new javax.swing.JButton();
@@ -48,14 +48,7 @@ public class LoginTela extends javax.swing.JFrame {
         setTitle("Painel Login");
         getContentPane().setLayout(null);
 
-        ver.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                verMouseClicked(evt);
-            }
-        });
-        getContentPane().add(ver);
-        ver.setBounds(840, 390, 0, 50);
-
+        nver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\visualizar.png")); // NOI18N
         nver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 nverMouseClicked(evt);
@@ -63,6 +56,15 @@ public class LoginTela extends javax.swing.JFrame {
         });
         getContentPane().add(nver);
         nver.setBounds(840, 380, 40, 70);
+
+        ver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\escondido.png")); // NOI18N
+        ver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                verMouseClicked(evt);
+            }
+        });
+        getContentPane().add(ver);
+        ver.setBounds(840, 390, 30, 50);
 
         emailTextField.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         emailTextField.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,7 +94,7 @@ public class LoginTela extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TelaLogin.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1360, 770);
+        jLabel1.setBounds(10, 0, 1360, 770);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
