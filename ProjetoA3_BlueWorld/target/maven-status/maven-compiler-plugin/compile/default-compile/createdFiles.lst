@@ -5,9 +5,11 @@ ProjetoA3_BlueWorld\telas\TelaCadastro$1.class
 Rio\java.class
 ProjetoA3_BlueWorld\telas\TelaCadastro$8.class
 ProjetoA3_BlueWorld\telas\TelaPrincipal.class
+ProjetoA3_BlueWorld\telas\TelaComum$3.class
 ProjetoA3_BlueWorld\telas\LoginTela$3.class
 ProjetoA3_BlueWorld\telas\TelaCadastro$4.class
 ProjetoA3_BlueWorld\telas\TelaComum$2.class
+ProjetoA3_BlueWorld\App.class
 ProjetoA3_BlueWorld\bd\UsuarioDAO.class
 ProjetoA3_BlueWorld\telas\TelaCadastro$7.class
 ProjetoA3_BlueWorld\telas\TelaComum.class
@@ -27,6 +29,7 @@ ProjetoA3_BlueWorld\modelo\Rio.class
 ProjetoA3_BlueWorld\telas\LoginTela$2.class
 ProjetoA3_BlueWorld\telas\TelaPrincipal$1.class
 ProjetoA3_BlueWorld\telas\TelaCadastro.class
+ProjetoA3_BlueWorld\telas\TelaComum$4.class
 ProjetoA3_BlueWorld\telas\LoginTela$5.class
 ProjetoA3_BlueWorld\bd\ConnectionFactory.class
 ProjetoA3_BlueWorld\telas\TelaCadastro$2.class

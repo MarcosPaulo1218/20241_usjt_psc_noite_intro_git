@@ -19,13 +19,16 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import ProjetoA3_BlueWorld.bd.ConnectionFactory;
 
+
 public class TelaPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaPrincipal
-     */
-    public TelaPrincipal() {
+    private LoginTela loginTela;
+    
+    public TelaPrincipal(LoginTela loginTela) {
+        
+        this.loginTela = loginTela;
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         
         
         // Definir campo Nome Rio
@@ -130,7 +133,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(Estado);
         Estado.setBounds(610, 330, 380, 70);
 
-        Confirmar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\Confirmar2.png")); // NOI18N
         Confirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfirmarActionPerformed(evt);
@@ -139,7 +141,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(Confirmar);
         Confirmar.setBounds(510, 680, 180, 60);
 
-        Voltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\Voltar2.png")); // NOI18N
         Voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VoltarActionPerformed(evt);
@@ -148,7 +149,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(Voltar);
         Voltar.setBounds(90, 680, 180, 60);
 
-        Limpar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\Limpar2.png")); // NOI18N
         Limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LimparActionPerformed(evt);
@@ -157,7 +157,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(Limpar);
         Limpar.setBounds(290, 680, 190, 60);
 
-        Fundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\TelaCadastroRio.png")); // NOI18N
+        Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TelaCadastroRio.png"))); // NOI18N
         Fundo.setText("jLabel1");
         getContentPane().add(Fundo);
         Fundo.setBounds(0, 0, 1360, 770);
@@ -166,7 +166,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarActionPerformed
-        // TODO add your handling code here:
+        String tipoUsuario = loginTela.getTipoUsuario();
+        
+        // Verificar se o tipo de usuário é "administrador"
+        if ("administrador".equals(tipoUsuario)) {
+            // Se for administrador, exibir uma mensagem de sucesso e confirmar a ação
+            JOptionPane.showMessageDialog(this, "Ação confirmada com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            // Se não for administrador, exibir uma mensagem informando que o usuário não tem permissão
+            JOptionPane.showMessageDialog(this, "Você não tem permissão para executar esta ação.", "Acesso negado", JOptionPane.WARNING_MESSAGE);
+        }
+
     }//GEN-LAST:event_ConfirmarActionPerformed
 
     private void VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarActionPerformed
@@ -180,6 +190,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         NivelPoluicao.setText("");
         TipoPoluicao.setText("");
         DataOcorrencia.setText("");
+        Estado.setText("");
+        Bairro.setText("");
     }//GEN-LAST:event_LimparActionPerformed
 
     /**
@@ -212,10 +224,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPrincipal().setVisible(true);
+                new TelaPrincipal(new LoginTela()).setVisible(true);
             }
         });
-    }
+    
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Bairro;

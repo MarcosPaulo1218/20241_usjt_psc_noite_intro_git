@@ -9,15 +9,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import ProjetoA3_BlueWorld.bd.ConnectionFactory;
+import java.awt.event.ActionListener;
 
 /**
  *
  * @author //Grupo 04\\
  */
 public class LoginTela extends javax.swing.JFrame {
-
+    
+    private String tipoUsuario; 
     
     public LoginTela() {
+        
         initComponents();
         setLocationRelativeTo(null);
         setExtendedState(JFrame.MAXIMIZED_BOTH); // Cod para max a tela
@@ -33,6 +36,10 @@ public class LoginTela extends javax.swing.JFrame {
         pword.setBorder(null);
         pword.setOpaque(false);
 }
+    
+    public String getTipoUsuario() {
+        return tipoUsuario;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -113,7 +120,7 @@ public class LoginTela extends javax.swing.JFrame {
     }//GEN-LAST:event_nverMouseClicked
 
     private void EntrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarButtonActionPerformed
-        String email = emailTextField.getText();
+    String email = emailTextField.getText();
     String senha = new String(pword.getPassword());
     
     // Conecta-se ao banco de dados
@@ -134,10 +141,10 @@ public class LoginTela extends javax.swing.JFrame {
 
         // Se houver um registro correspondente, o login é bem-sucedido
         if (rs.next()) {
-            // Faça o que for necessário após o login bem-sucedido, como abrir uma nova janela
+            tipoUsuario = rs.getString("tipo_usuario");
             JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
             // Exemplo: abrir uma nova janela
-            TelaPrincipal janelaPrincipal = new TelaPrincipal();
+            TelaPrincipal janelaPrincipal = new TelaPrincipal(this);
             janelaPrincipal.setVisible(true);
             dispose(); // Fecha a janela de login
         } else {
@@ -207,5 +214,10 @@ public class LoginTela extends javax.swing.JFrame {
     private javax.swing.JPasswordField pword;
     private javax.swing.JLabel ver;
     // End of variables declaration//GEN-END:variables
+
+    
+    public void setLoginButtonListener(ActionListener actionListener) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }

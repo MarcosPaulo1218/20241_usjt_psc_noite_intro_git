@@ -5,6 +5,7 @@
 package ProjetoA3_BlueWorld.telas;
 
 import java.awt.Color;
+import javax.swing.JFrame;
 
 /**
  *
@@ -17,7 +18,7 @@ public class TelaComum extends javax.swing.JFrame {
      */
     public TelaComum() {
         initComponents();
-        
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         
         // Definir campo Bairro
         Inicio.setBackground(new Color(0, 0, 0, 0));
@@ -55,8 +56,13 @@ public class TelaComum extends javax.swing.JFrame {
         Inicio.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         Inicio.setForeground(new java.awt.Color(255, 255, 255));
         Inicio.setText("Início");
+        Inicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InicioActionPerformed(evt);
+            }
+        });
         getContentPane().add(Inicio);
-        Inicio.setBounds(50, 150, 90, 36);
+        Inicio.setBounds(10, 141, 150, 50);
 
         CadastrarOcorrencia.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         CadastrarOcorrencia.setForeground(new java.awt.Color(255, 255, 255));
@@ -67,24 +73,41 @@ public class TelaComum extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CadastrarOcorrencia);
-        CadastrarOcorrencia.setBounds(50, 230, 200, 36);
+        CadastrarOcorrencia.setBounds(10, 221, 260, 50);
 
         Sair.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         Sair.setText("Sair");
+        Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SairActionPerformed(evt);
+            }
+        });
         getContentPane().add(Sair);
-        Sair.setBounds(1280, 20, 60, 31);
+        Sair.setBounds(1220, 20, 140, 40);
 
-        Fundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\TelaComum.png")); // NOI18N
+        Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TelaComum.png"))); // NOI18N
         Fundo.setText("jLabel1");
         getContentPane().add(Fundo);
-        Fundo.setBounds(0, 0, 1360, 768);
+        Fundo.setBounds(0, 0, 1360, 770);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void CadastrarOcorrenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarOcorrenciaActionPerformed
-        // TODO add your handling code here:
+        TelaCadastro janelaPrincipal = new TelaCadastro();
+        janelaPrincipal.setVisible(true);
+        dispose();
     }//GEN-LAST:event_CadastrarOcorrenciaActionPerformed
+
+    private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
+        LoginTela janelaPrincipal = new LoginTela();
+        janelaPrincipal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_InicioActionPerformed
+
+    private void SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairActionPerformed
+        dispose();
+    }//GEN-LAST:event_SairActionPerformed
 
     /**
      * @param args the command line arguments
