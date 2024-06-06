@@ -58,6 +58,23 @@ public class UsuarioDAO {
         }
     }
     
+    public int getIdUsuario(String email, String senha) throws SQLException {
+        var sql = "SELECT id FROM usuarios WHERE email = ? AND senha = ?";
+        try (var conexao = new ConnectionFactory().conectar();
+             var ps = conexao.prepareStatement(sql)) {
+            ps.setString(1, email);
+            ps.setString(2, senha);
+
+            try (var rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("id");
+                } else {
+                    return -1; // Retorna -1 se o usuário não for encontrado
+                }
+            }
+        }
+    }
+    
 
      public String getTipoUsuario(String email, String senha) throws SQLException {
         var sql = "SELECT tipo_usuario FROM usuarios WHERE email = ? AND senha = ?";

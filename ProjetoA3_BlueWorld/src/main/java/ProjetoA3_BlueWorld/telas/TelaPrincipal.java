@@ -18,6 +18,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import ProjetoA3_BlueWorld.bd.ConnectionFactory;
+import ProjetoA3_BlueWorld.bd.EventoDAO;
+import ProjetoA3_BlueWorld.eventos.Evento;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.HashSet;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+
 
 
 public class TelaPrincipal extends javax.swing.JFrame {
@@ -166,16 +175,53 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarActionPerformed
-        String tipoUsuario = loginTela.getTipoUsuario();
-        
-        // Verificar se o tipo de usuário é "administrador"
-        if ("administrador".equals(tipoUsuario)) {
-            // Se for administrador, exibir uma mensagem de sucesso e confirmar a ação
-            JOptionPane.showMessageDialog(this, "Ação confirmada com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            // Se não for administrador, exibir uma mensagem informando que o usuário não tem permissão
-            JOptionPane.showMessageDialog(this, "Você não tem permissão para executar esta ação.", "Acesso negado", JOptionPane.WARNING_MESSAGE);
-        }
+String tipoUsuario = loginTela.getTipoUsuario();
+
+// Verificar se o tipo de usuário é "administrador"
+if ("administrador".equals(tipoUsuario)) {
+    // Se for administrador, exibir uma mensagem de sucesso e confirmar a ação
+    JOptionPane.showMessageDialog(this, "Ação confirmada com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+    
+    // Criar um novo evento
+    Evento novoEvento = new Evento();
+    
+    novoEvento.setTipoPoluicao(TipoPoluicao.getText());
+    novoEvento.setNivelPoluicao(NivelPoluicao.getText());
+    novoEvento.setNomeRio(NomeRio.getText());
+    novoEvento.setBairro(Bairro.getText());
+    novoEvento.setEstado(Estado.getText());
+    
+    try {
+    // Obtendo a data do campo de texto
+    String dataOcorrenciaStr = DataOcorrencia.getText(); // Supondo que DataOcorrencia seja um JTextField
+    
+    // Criando um objeto SimpleDateFormat para fazer a conversão
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    
+    // Convertendo a string para um objeto Date
+    Date dataOcorrencia = sdf.parse(dataOcorrenciaStr);
+    
+    novoEvento.setDataOcorrencia(dataOcorrencia);
+} catch (ParseException ex) {
+    ex.printStackTrace();
+    JOptionPane.showMessageDialog(this, "Formato de data inválido.", "Erro", JOptionPane.ERROR_MESSAGE);
+};
+    
+    // Agora, você pode usar o EventoDAO para cadastrar o evento no banco de dados
+    try {
+        EventoDAO eventoDAO = new EventoDAO();
+        eventoDAO.cadastrar(novoEvento, loginTela.getIdUsuario());
+        JOptionPane.showMessageDialog(this, "Evento cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+    } catch (SQLException e) {
+        // Trate quaisquer exceções aqui
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Erro ao cadastrar o evento.", "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+    
+} else {
+    // Se não for administrador, exibir uma mensagem informando que o usuário não tem permissão
+    JOptionPane.showMessageDialog(this, "Você não tem permissão para executar esta ação.", "Acesso negado", JOptionPane.WARNING_MESSAGE);
+}
 
     }//GEN-LAST:event_ConfirmarActionPerformed
 

@@ -13,61 +13,79 @@ import java.util.Date;
 
 public class Evento {
 
-    private int codigo;
-    private String nome;
-    private String descricao;
-    private Date dataInicio;
-    private Date dataFim;
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    private int idUsuario;
+    private Date dataOcorrencia;
+    private String tipoPoluicao;
+    private String nivelPoluicao;
+    private String nomeRio;
+    private String bairro;
+    private String estado;
+    
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public Date getDataOcorrencia() {
+        return dataOcorrencia;
     }
 
-    public void setDataInicio(Date dataInicio) {
-        this.dataInicio = dataInicio;
+    public void setDataOcorrencia(Date dataOcorrencia) {
+        this.dataOcorrencia = dataOcorrencia;
     }
 
-    public void setDataFim(Date dataFim) {
-        this.dataFim = dataFim;
+    public String getTipoPoluicao() {
+        return tipoPoluicao;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public void setTipoPoluicao(String tipoPoluicao) {
+        this.tipoPoluicao = tipoPoluicao;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNivelPoluicao() {
+        return nivelPoluicao;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public void setNivelPoluicao(String nivelPoluicao) {
+        this.nivelPoluicao = nivelPoluicao;
     }
 
-    public Date getDataInicio() {
-        return dataInicio;
+    public String getNomeRio() {
+        return nomeRio;
     }
 
-    public Date getDataFim() {
-        return dataFim;
+    public void setNomeRio(String nomeRio) {
+        this.nomeRio = nomeRio;
     }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     
     
     
-    @Override //Annotation: Java 5+
-    public String toString(){
+        @Override
+        public String toString() {
         var sdf = new SimpleDateFormat("dd/MM/yy");
         return String.format(
-            "Nome: %s, Descrição: %s, Data Início: %s",
-            nome, descricao, sdf.format(dataInicio)
+            "Data Ocorrência: %s, Tipo Poluição: %s, Nível Poluição: %s, Nome Rio: %s, Bairro: %s, Estado: %s",
+            sdf.format(dataOcorrencia), tipoPoluicao, nivelPoluicao, nomeRio, bairro, estado
         );
     }
-
 }

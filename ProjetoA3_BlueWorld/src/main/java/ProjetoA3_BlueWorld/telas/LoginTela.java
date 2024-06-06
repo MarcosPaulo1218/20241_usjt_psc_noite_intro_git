@@ -17,7 +17,8 @@ import java.awt.event.ActionListener;
  */
 public class LoginTela extends javax.swing.JFrame {
     
-    private String tipoUsuario; 
+    private String tipoUsuario;
+    private int id_usuario;
     
     public LoginTela() {
         
@@ -39,6 +40,10 @@ public class LoginTela extends javax.swing.JFrame {
     
     public String getTipoUsuario() {
         return tipoUsuario;
+    }
+    
+    public int getIdUsuario(){
+        return id_usuario;
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -142,6 +147,7 @@ public class LoginTela extends javax.swing.JFrame {
         // Se houver um registro correspondente, o login é bem-sucedido
         if (rs.next()) {
             tipoUsuario = rs.getString("tipo_usuario");
+            id_usuario = rs.getInt("id");
             JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
             // Exemplo: abrir uma nova janela
             TelaPrincipal janelaPrincipal = new TelaPrincipal(this);
