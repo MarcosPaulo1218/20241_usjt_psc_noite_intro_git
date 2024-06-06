@@ -36,6 +36,12 @@ public class LoginTela extends javax.swing.JFrame {
         pword.setBackground(new Color(0, 0, 0, 0));
         pword.setBorder(null);
         pword.setOpaque(false);
+        
+        // Definir campo de Senha
+        Registro.setBackground(new Color(0, 0, 0, 0));
+        Registro.setBorder(null);
+        Registro.setOpaque(false);
+        
 }
     
     public String getTipoUsuario() {
@@ -52,7 +58,7 @@ public class LoginTela extends javax.swing.JFrame {
         nver = new javax.swing.JLabel();
         ver = new javax.swing.JLabel();
         emailTextField = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        Registro = new javax.swing.JToggleButton();
         pword = new javax.swing.JPasswordField();
         EntrarButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -84,14 +90,16 @@ public class LoginTela extends javax.swing.JFrame {
         getContentPane().add(emailTextField);
         emailTextField.setBounds(580, 300, 260, 70);
 
-        jToggleButton1.setText("jToggleButton1");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        Registro.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
+        Registro.setForeground(new java.awt.Color(255, 255, 255));
+        Registro.setText("Registre-se");
+        Registro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                RegistroActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1);
-        jToggleButton1.setBounds(640, 540, 112, 23);
+        getContentPane().add(Registro);
+        Registro.setBounds(501, 528, 410, 40);
 
         pword.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         pword.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,7 +120,7 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(EntrarButton);
-        EntrarButton.setBounds(490, 460, 410, 50);
+        EntrarButton.setBounds(500, 460, 410, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TelaLogin.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -187,11 +195,11 @@ public class LoginTela extends javax.swing.JFrame {
         var senha = pword.getPassword();
     }//GEN-LAST:event_pwordActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void RegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroActionPerformed
             TelaCadastro janelaPrincipal = new TelaCadastro();
             janelaPrincipal.setVisible(true);
             dispose();
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_RegistroActionPerformed
 
         
     
@@ -230,9 +238,9 @@ public class LoginTela extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EntrarButton;
+    private javax.swing.JToggleButton Registro;
     private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel nver;
     private javax.swing.JPasswordField pword;
     private javax.swing.JLabel ver;
