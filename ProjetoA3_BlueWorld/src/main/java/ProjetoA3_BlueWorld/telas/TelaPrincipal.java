@@ -142,6 +142,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(Estado);
         Estado.setBounds(610, 330, 380, 70);
 
+        Confirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Confirmar2.png"))); // NOI18N
         Confirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfirmarActionPerformed(evt);
@@ -150,6 +151,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(Confirmar);
         Confirmar.setBounds(510, 680, 180, 60);
 
+        Voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Voltar2.png"))); // NOI18N
         Voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VoltarActionPerformed(evt);
@@ -158,6 +160,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(Voltar);
         Voltar.setBounds(90, 680, 180, 60);
 
+        Limpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Limpar2.png"))); // NOI18N
         Limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LimparActionPerformed(evt);

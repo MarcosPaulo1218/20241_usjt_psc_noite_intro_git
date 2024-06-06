@@ -117,6 +117,11 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JToggleButton" name="Confirmar">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Confirmar2.png"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConfirmarActionPerformed"/>
       </Events>
@@ -127,6 +132,11 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JToggleButton" name="Voltar">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Voltar2.png"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VoltarActionPerformed"/>
       </Events>
@@ -137,6 +147,11 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JToggleButton" name="Limpar">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Limpar2.png"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LimparActionPerformed"/>
       </Events>

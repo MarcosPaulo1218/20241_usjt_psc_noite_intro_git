@@ -105,29 +105,29 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(NomeComplet);
-        NomeComplet.setBounds(200, 180, 340, 60);
+        NomeComplet.setBounds(200, 170, 340, 70);
 
         Email.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         Email.setForeground(new java.awt.Color(255, 255, 255));
         Email.setText("E-mail");
         getContentPane().add(Email);
-        Email.setBounds(200, 280, 330, 50);
+        Email.setBounds(200, 270, 330, 60);
 
         ConfEmail.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         ConfEmail.setForeground(new java.awt.Color(255, 255, 255));
         ConfEmail.setText("E-mail");
         getContentPane().add(ConfEmail);
-        ConfEmail.setBounds(200, 370, 330, 50);
+        ConfEmail.setBounds(200, 370, 330, 60);
 
         Pass.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         Pass.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(Pass);
-        Pass.setBounds(200, 470, 330, 50);
+        Pass.setBounds(200, 460, 330, 60);
 
         ConfPass.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         ConfPass.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(ConfPass);
-        ConfPass.setBounds(200, 570, 330, 50);
+        ConfPass.setBounds(200, 560, 330, 60);
 
         CPF.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         CPF.setForeground(new java.awt.Color(255, 255, 255));
@@ -138,7 +138,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CPF);
-        CPF.setBounds(810, 180, 330, 50);
+        CPF.setBounds(820, 170, 320, 70);
 
         CEP.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         CEP.setForeground(new java.awt.Color(255, 255, 255));
@@ -149,7 +149,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CEP);
-        CEP.setBounds(820, 280, 330, 50);
+        CEP.setBounds(820, 270, 330, 60);
 
         Rua.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         Rua.setForeground(new java.awt.Color(255, 255, 255));
@@ -160,7 +160,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Rua);
-        Rua.setBounds(820, 370, 330, 50);
+        Rua.setBounds(820, 370, 330, 60);
 
         Confirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Confirmar.png"))); // NOI18N
         Confirmar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -169,7 +169,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Confirmar);
-        Confirmar.setBounds(640, 610, 160, 50);
+        Confirmar.setBounds(640, 600, 160, 60);
 
         Limpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Limpar.png"))); // NOI18N
         Limpar.addActionListener(new java.awt.event.ActionListener() {
@@ -178,11 +178,10 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Limpar);
-        Limpar.setBounds(820, 610, 160, 50);
+        Limpar.setBounds(820, 600, 160, 60);
 
         jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Voltar.png"))); // NOI18N
-        jToggleButton1.setText("Voltar");
         jToggleButton1.setAutoscrolls(true);
         jToggleButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         getContentPane().add(jToggleButton1);

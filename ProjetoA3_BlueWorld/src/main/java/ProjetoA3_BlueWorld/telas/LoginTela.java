@@ -60,7 +60,7 @@ public class LoginTela extends javax.swing.JFrame {
         setTitle("Painel Login");
         getContentPane().setLayout(null);
 
-        nver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\visualizar.png")); // NOI18N
+        nver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/escondido.png"))); // NOI18N
         nver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 nverMouseClicked(evt);
@@ -69,7 +69,7 @@ public class LoginTela extends javax.swing.JFrame {
         getContentPane().add(nver);
         nver.setBounds(840, 380, 40, 70);
 
-        ver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\20241_usjt_psc_noite_intro_git\\ProjetoA3_BlueWorld\\src\\main\\resources\\escondido.png")); // NOI18N
+        ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/visualizar.png"))); // NOI18N
         ver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 verMouseClicked(evt);

@@ -48,6 +48,8 @@ public class TelaComum extends javax.swing.JFrame {
         Inicio = new javax.swing.JToggleButton();
         CadastrarOcorrencia = new javax.swing.JToggleButton();
         Sair = new javax.swing.JToggleButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         Fundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,6 +86,21 @@ public class TelaComum extends javax.swing.JFrame {
         });
         getContentPane().add(Sair);
         Sair.setBounds(1220, 20, 140, 40);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Nome do Rio ", "Estado ", "Bairro", "Nível de Poluição", "Tipo de Poluição", "Data da Ocorrência"
+            }
+        ));
+        jTable1.setShowGrid(true);
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(300, 100, 1040, 650);
 
         Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TelaComum.png"))); // NOI18N
         Fundo.setText("jLabel1");
@@ -150,5 +167,7 @@ public class TelaComum extends javax.swing.JFrame {
     private javax.swing.JLabel Fundo;
     private javax.swing.JToggleButton Inicio;
     private javax.swing.JToggleButton Sair;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
